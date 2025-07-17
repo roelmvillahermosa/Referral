@@ -17,7 +17,7 @@ public class TestReferral {
     public String ReferralInputTextId = "";
     public String AffiliateUserPass = "";
     public static String ChromeWebDriver = "webdriver.chrome.driver";
-    public static String ChromeWebDriverPath =  "C:\\Users\\Roel\\Downloads\\selenium-java-3.0.1\\chromedriver_win32\\chromedriver.exe";
+    public static String ChromeWebDriverPath =  "C:\\Users\\*****\\Downloads\\selenium-java-3.0.1\\chromedriver_win32\\chromedriver.exe";
     public String RecipientList = "";
     public String ReferralStatus = "";
     public String ReferralPageTitle = "";
@@ -25,16 +25,16 @@ public class TestReferral {
 
 
     protected void SetUpData() {
-        this.FrontendLogin = "http://uptoday.ca/build/QA_TEST/customer/account/login/";
-        this.ReferralURL = "http://uptoday.ca/build/QA_TEST/refer/?st-code=QYQ";
-        this.CustomerRegistrationUrl = "http://uptoday.ca/build/QA_TEST/customer/account/create/";
-        this.ReferralCode = "QYQ"; // Affiliate is roelmvillahermosa@gmail.com
+        this.FrontendLogin = "";
+        this.ReferralURL = "";
+        this.CustomerRegistrationUrl = "";
+        this.ReferralCode = "QYQ"; // Affiliate
         this.ReferralInputTextId = "rewards_referral";
-        this.AffiliateUserPass = "roelmvillahermosa@gmail.com";
-        this.RecipientList = "rvilla+new1@sweettoothhq.com";
+        this.AffiliateUserPass = "";
+        this.RecipientList = "";
         this.ReferralStatus = "Message Sent";
         this.ReferralPageTitle = "My Referrals";
-        this.SimpleProduct = "http://uptoday.ca/build/QA_TEST/accessories/jewelry/pearl-stud-earrings.html";
+        this.SimpleProduct = "";
     }
 
     public void TestReferralURL_ReferralCodeBox() {
@@ -59,7 +59,7 @@ public class TestReferral {
         driver.findElement(By.id("email")).sendKeys(new CharSequence[]{this.AffiliateUserPass});
         driver.findElement(By.id("pass")).sendKeys(new CharSequence[]{this.AffiliateUserPass});
         driver.findElement(By.cssSelector("button[class=\'button\']")).click();
-        driver.findElement(By.xpath("//a[@href='http://uptoday.ca/build/QA_TEST/rewardsref/customer/index/']")).click();
+        driver.findElement(By.xpath("//a[@href='']")).click();
         Assert.assertEquals(driver.getTitle(), this.ReferralPageTitle); //Test Referral page title
         this.ExitTestCase();
     }
@@ -72,7 +72,7 @@ public class TestReferral {
         driver.findElement(By.id("email")).sendKeys(new CharSequence[]{this.AffiliateUserPass});
         driver.findElement(By.id("pass")).sendKeys(new CharSequence[]{this.AffiliateUserPass});
         driver.findElement(By.cssSelector("button[class=\'button\']")).click();
-        driver.findElement(By.xpath("//a[@href='http://uptoday.ca/build/QA_TEST/rewardsref/customer/index/']")).click();
+        driver.findElement(By.xpath("//a[@href='']")).click();
         driver.findElement(By.id("recipient_list")).sendKeys(new CharSequence[]{this.RecipientList});
         driver.findElement(By.cssSelector("button[class=\'button\']")).click();
         String myStatus = driver.findElement(By.xpath("//table[@id='referred-friends-table']/tbody/tr[@class='first last odd']/td[@class='a-left']")).getText();
